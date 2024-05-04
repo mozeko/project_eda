@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.express as px
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.preprocessing import MinMaxScaler
 
 
 
@@ -82,6 +83,8 @@ if selected =="Model":
     #Loads the Boston House Price Dataset
     X = df_m.iloc[:,:-1]
     y = df_m.iloc[:,-1]
+    mmscaler=MinMaxScaler(feature_range=(0,1))
+    X = mmscaler.fit_transform(X)
     def user_input_features():
         airline = st.sidebar.slider('airline',0,5)
         flight = st.sidebar.slider('flight',0,1500)
