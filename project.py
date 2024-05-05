@@ -10,7 +10,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'EDA','Model'], 
+    selected = option_menu("Main Menu", ["Home", 'insights','prediction'], 
         icons=['house', 'gear','graph-up'], menu_icon="cast", default_index=1)
 
 st.sidebar.write("")
